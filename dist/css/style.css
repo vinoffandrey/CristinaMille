@@ -465,6 +465,11 @@ body.popup-show::after {
     padding-left: 2.1875rem;
   }
 }
+@media (max-width: 29.99875em) {
+  .popup__label {
+    font-size: 13px !important;
+  }
+}
 .popup__label a {
   text-decoration: underline;
 }
