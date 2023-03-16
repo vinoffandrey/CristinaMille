@@ -1,0 +1,31 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button__new {
+	display: inline-flex;
+	padding: 0;
+	border-radius: 60px;
+	@include adaptiveValue("padding-top", 15, 10, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 15, 10, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-left", 25, 15, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-right", 25, 15, $containerWidth, $minWidth, 1);
+	background-color: #FFFFFF;
+	transition: all .3s ease 0s;
+	border: 1px solid #fff;
+	color: #222222!important;
+	cursor: pointer;
+	&:hover {
+		background-color: #222222;
+		color: #FFFFFF!important;
+	}
+	&.black {
+		background-color: #222222;
+		border: 1px solid #222222;
+		color: #fff!important;
+		&:hover {
+			background-color: #fff;
+			color: #222222!important;
+			border: 1px solid #222222;
+		}
+	}
+}
