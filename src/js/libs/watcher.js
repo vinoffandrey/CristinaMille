@@ -30,7 +30,6 @@ export class ScrollWatcher {
 	// Конструктор наблюдателей
 	scrollWatcherConstructor(items) {
 		if (items.length) {
-			this.scrollWatcherLogging(`Проснулся, слежу за объектами (${items.length})...`);
 			// Уникализируем параметры
 			let uniqParams = uniqArray(Array.from(items).map(function (item) {
 				return `${item.dataset.watchRoot ? item.dataset.watchRoot : null}|${item.dataset.watchMargin ? item.dataset.watchMargin : '0px'}|${item.dataset.watchThreshold ? item.dataset.watchThreshold : 0}`;
@@ -63,7 +62,6 @@ export class ScrollWatcher {
 				this.scrollWatcherInit(groupItems, configWatcher);
 			});
 		} else {
-			this.scrollWatcherLogging('Сплю, нет объектов для слежения. ZzzZZzz');
 		}
 	}
 	// Функция создания настроек
@@ -74,12 +72,10 @@ export class ScrollWatcher {
 		if (document.querySelector(paramsWatch.root)) {
 			configWatcher.root = document.querySelector(paramsWatch.root);
 		} else if (paramsWatch.root !== 'null') {
-			this.scrollWatcherLogging(`Эмм... родительского объекта ${paramsWatch.root} нет на странице`);
 		}
 		// Отступ срабатывания
 		configWatcher.rootMargin = paramsWatch.margin;
 		if (paramsWatch.margin.indexOf('px') < 0 && paramsWatch.margin.indexOf('%') < 0) {
-			this.scrollWatcherLogging(`Ой ой, настройку data-watch-margin нужно задавать в PX или %`);
 			return
 		}
 		// Точки срабатывания
@@ -117,18 +113,15 @@ export class ScrollWatcher {
 			// Видим объект
 			// Добавляем класс
 			!targetElement.classList.contains('_watcher-view') ? targetElement.classList.add('_watcher-view') : null;
-			this.scrollWatcherLogging(`Я вижу ${targetElement.classList}, добавил класс _watcher-view`);
 		} else {
 			// Не видим объект
 			// Убираем класс
 			targetElement.classList.contains('_watcher-view') ? targetElement.classList.remove('_watcher-view') : null;
-			this.scrollWatcherLogging(`Я не вижу ${targetElement.classList}, убрал класс _watcher-view`);
 		}
 	}
 	// Функция отключения слежения за объектом
 	scrollWatcherOff(targetElement, observer) {
 		observer.unobserve(targetElement);
-		this.scrollWatcherLogging(`Я перестал следить за ${targetElement.classList}`);
 	}
 	// Функция вывода в консоль
 	scrollWatcherLogging(message) {

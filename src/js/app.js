@@ -151,7 +151,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 // Наблюдатель за объектами c атрибутом data-watch
 // Документация по работе в шаблоне: js/libs/watcher.js
 // Сниппет(HTML):
-// flsScroll.scrollWatcher();
+flsScroll.scrollWatcher();
 
 // Плавная навигация по странице
 // flsScroll.pageNavigation();

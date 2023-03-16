@@ -8,7 +8,7 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			<section class="main__section">
+			<section class="main__section" data-watch>
 				<div class="main__slider">
 					<div class="main__swiper">
 						<div class="main__item">
@@ -41,7 +41,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="submain__section">
+			<section class="submain__section" data-watch>
 				<div class="submain__container">
 					<div class="submain__body">
 						<div class="submain__item text-22">
@@ -87,7 +87,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="comfort__section">
+			<section class="comfort__section" data-watch>
 				<div class="comfort__container">
 					<div class="comfort__body">
 						<div class="comfort__left">
@@ -106,7 +106,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="stars__section">
+			<section class="stars__section" data-watch data-watch-once>
 				<div class="stars__container">
 					<div class="stars__title title-30">
 						<h4>Звезды уже спят на подушках Cristina Mille</h4>
@@ -464,6 +464,9 @@
 					</div>
 				</div>
 			</section>
+			<div class="callback__button">
+				<a data-popup="#popup__consulation"></a>
+			</div>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

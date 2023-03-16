@@ -16,3 +16,48 @@
 .lg-download.lg-icon {
 	display: none;
 }
+
+.callback__button {
+	position: fixed;
+	@include adaptiveValue("height", 75, 40, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("width", 75, 40, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("bottom", 20, 10, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("right", 20, 10, $containerWidth, $minWidth, 1);
+	z-index: 3;
+	transition: visible .3s ease 0s;
+	transition: opacity .3s ease 0s;
+	background-color: #222222;
+	border-radius: 50%;
+	padding: 15px;
+	@include adaptiveValue("padding", 15, 5, $containerWidth, $minWidth, 1);
+	.lock & {
+		@include adaptiveValue("right", 37, 27, $containerWidth, $minWidth, 1);
+		@media(hover: none) {
+			@include adaptiveValue("right", 20, 10, $containerWidth, $minWidth, 1);
+		}
+	}
+	a {
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		background-image: url('../img/footer/icon.svg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		transition: all .3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				opacity: .5;
+			}
+		}
+	}
+}
+.main__section._watcher-view ~ .callback__button, .submain__section._watcher-view ~ .callback__button {
+	visibility: hidden!important;
+	opacity: 0!important;
+}
+.stars__section._watcher-view ~ .callback__button{
+	visibility: visible;
+	opacity: 1;
+}
