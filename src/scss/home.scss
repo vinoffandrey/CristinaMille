@@ -3,7 +3,10 @@
 	touch-action: none;
 }
 .lg-on body {
-	padding-right: 17px!important;
+		padding-right: 17px!important;
+	@media(hover: none) {
+		padding-right: 0!important;
+	}
 }
 //====================================================================================================
 @keyframes opacity {
@@ -212,7 +215,7 @@
 					transform: translate(0%, -110%)!important;
 				}
 				@media(max-width: 850px) {
-					transform: translate(50%, -110%)!important;
+					transform: translate(25%, -110%)!important;
 				}
 				@media(max-width: 550px) {
 					transform: translate(5%, -110%)!important;
@@ -264,7 +267,7 @@
 		&:nth-child(1) {
 			.submain__hover {
 				@media(max-width: 776px) {
-					transform: translate(0%, -110%)!important;
+					transform: translate(50%, -110%)!important;
 				}
 				@media(max-width: 550px) {
 					transform: translate(50%, -110%)!important;
@@ -954,9 +957,9 @@
 .articles-slider {
 
 	&__arrows {
-		top: 0;
-		right: 15px;
-		transform: translateY(-10%);
+		top: 0!important;
+		right: 15px!important;
+		transform: translateY(-10%)!important;
 		@media(max-width: 600px) {
 			transform: none!important;
 		}
